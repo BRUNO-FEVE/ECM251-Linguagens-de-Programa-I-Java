@@ -1,39 +1,67 @@
 import java.util.Scanner;
 
 public class Ex25 {
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        String[] perguntas = {"Digite o primeiro numero: ", "Digite o segundo numero: ", "\nOperações Disponíveis:\n1. Adição;\n2. Subtração;\n3. Multiplicação;\n4. Divisão;\n9. Sair do Programa.\nDigite o número de ordem da opção desejada: "};
-        int numChoice = 0;
-        int[] numbers = new int[perguntas.length];
-        
+        double num1, num2;
+        int opcao;
+
         do {
-            for (int i=0; i<2; i++) {
-                System.out.print(perguntas[i]);
-                numbers[i] = sc.nextInt();
-            }
+            System.out.println("Operações Disponíveis:");
+            System.out.println("1. Adição");
+            System.out.println("2. Subtração");
+            System.out.println("3. Multiplicação");
+            System.out.println("4. Divisão");
+            System.out.println("9. Sair do Programa");
+            System.out.print("Digite o número de ordem da opção desejada: ");
+            opcao = sc.nextInt();
 
-            System.out.print(perguntas[2]);
-            numChoice = sc.nextInt();
-
-            switch (numChoice) {
+            switch (opcao) {
                 case 1:
-                    System.out.println("\nA soma dos numeros é: " + (numbers[0]+numbers[1]));;
+                    System.out.print("Digite o primeiro número: ");
+                    num1 = sc.nextDouble();
+                    System.out.print("Digite o segundo número: ");
+                    num2 = sc.nextDouble();
+                    System.out.println("Resultado da adição: " + (num1 + num2));
                     break;
-            
                 case 2:
-                    System.out.println("A soma dos numeros é: " + (numbers[0]-numbers[1])); 
+                    System.out.print("Digite o primeiro número: ");
+                    num1 = sc.nextDouble();
+                    System.out.print("Digite o segundo número: ");
+                    num2 = sc.nextDouble();
+                    System.out.println("Resultado da subtração: " + (num1 - num2));
                     break;
-                case 3: 
-                    System.out.println("A soma dos numeros é: " + (numbers[0]*numbers[1])); 
+                case 3:
+                    System.out.print("Digite o primeiro número: ");
+                    num1 = sc.nextDouble();
+                    System.out.print("Digite o segundo número: ");
+                    num2 = sc.nextDouble();
+                    System.out.println("Resultado da multiplicação: " + (num1 * num2));
                     break;
-                case 4: 
-                    System.out.println("A soma dos numeros é: " + (numbers[0]/numbers[1])); 
+                case 4:
+                    System.out.print("Digite o primeiro número: ");
+                    num1 = sc.nextDouble();
+                    System.out.print("Digite o segundo número: ");
+                    num2 = sc.nextDouble();
+                    if (num2 == 0) {
+                        System.out.println("Não é possível dividir por zero.");
+                    } else {
+                        System.out.println("Resultado da divisão: " + (num1 / num2));
+                    }
+                    break;
+                case 9:
+                    System.out.println("Programa encerrado.");
                     break;
                 default:
-                    break;
+                    System.out.println("Opção inválida.");
             }
-        } while (numChoice != 9);
+
+            System.out.println();
+        } while (opcao != 9);
+
         sc.close();
     }
+
 }
