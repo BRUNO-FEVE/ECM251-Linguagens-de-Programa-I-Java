@@ -184,11 +184,5 @@ public class App extends JFrame implements ActionListener{
                     break;
             }
         }
-
-        
-
-         
-
-         
     }
 }
