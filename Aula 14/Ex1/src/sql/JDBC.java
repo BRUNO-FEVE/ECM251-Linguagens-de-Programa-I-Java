@@ -193,5 +193,4 @@ public ArrayList<Object[]> loadGrades(Connection conn){
     }
     return hoursList;
 }
-
 }
